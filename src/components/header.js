@@ -1,42 +1,50 @@
 import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
+import styled from "styled-components"
+import Container from "./container"
 
-const Header = ({ siteTitle }) => (
-  <header
-    style={{
-      background: `rebeccapurple`,
-      marginBottom: `1.45rem`,
-    }}
-  >
-    <div
-      style={{
-        margin: `0 auto`,
-        maxWidth: 960,
-        padding: `1.45rem 1.0875rem`,
-      }}
-    >
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: `white`,
-            textDecoration: `none`,
-          }}
-        >
-          {siteTitle}
-        </Link>
-      </h1>
-    </div>
-  </header>
+const Wrapper = styled.header`
+  background: orange;
+  border-bottom: 1px solid SandyBrown;
+  margin-bottom: 1em;
+  font-size: 100%;
+  a {
+    font-size: 180%;
+    color: PeachPuff;
+    text-decoration: none;
+    font-family: Cabin, sans-serif;
+    font-weight: 900;
+    line-height: 70%;
+    text-shadow: 1px 2px 1px rgba(0, 0, 0, 0.1);
+    small {
+      display: block;
+      color: #fff;
+      font-weight: 400;
+      font-size: 70%;
+    }
+  }
+`
+
+const Header = ({ siteTitle, subTitle }) => (
+  <Wrapper>
+    <Container style={{ paddingTop: "2em", paddingBottom: "2em" }}>
+      <Link to="/">
+        {siteTitle}
+        {subTitle && <small>{subTitle}</small>}
+      </Link>
+    </Container>
+  </Wrapper>
 )
 
 Header.propTypes = {
   siteTitle: PropTypes.string,
+  subTitle: PropTypes.string,
 }
 
 Header.defaultProps = {
   siteTitle: ``,
+  subTitle: ``,
 }
 
 export default Header
