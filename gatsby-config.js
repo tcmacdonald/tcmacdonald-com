@@ -33,11 +33,11 @@ module.exports = {
       options: {
         fonts: [
           {
-            family: `Slabo 27px`,
+            family: `Roboto Slab`,
             variants: [`400`],
           },
           {
-            family: `Cabin`,
+            family: `Roboto`,
             variants: [`400`, `700`],
           },
         ],

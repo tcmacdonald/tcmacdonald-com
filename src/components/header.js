@@ -5,30 +5,33 @@ import styled from "styled-components"
 import Container from "./container"
 
 const Wrapper = styled.header`
-  background: orange;
-  border-bottom: 1px solid SandyBrown;
-  margin-bottom: 1em;
+  background: #f4743b;
   font-size: 100%;
   a {
     font-size: 180%;
     color: PeachPuff;
     text-decoration: none;
-    font-family: Cabin, sans-serif;
+    font-family: Roboto Slab, sans-serif;
     font-weight: 900;
-    line-height: 70%;
+    line-height: 120%;
     text-shadow: 1px 2px 1px rgba(0, 0, 0, 0.1);
     small {
+      font-family: Cabin, sans-serif;
       display: block;
       color: #fff;
       font-weight: 400;
       font-size: 70%;
+    }
+    &:hover {
+      text-decoration: none;
+      color: white;
     }
   }
 `
 
 const Header = ({ siteTitle, subTitle }) => (
   <Wrapper>
-    <Container style={{ paddingTop: "2em", paddingBottom: "2em" }}>
+    <Container style={{ paddingTop: "1em", paddingBottom: "0.5em" }}>
       <Link to="/">
         {siteTitle}
         {subTitle && <small>{subTitle}</small>}

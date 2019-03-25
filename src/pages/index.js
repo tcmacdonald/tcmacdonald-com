@@ -1,6 +1,5 @@
 import React from "react"
-import { Link } from "gatsby"
-
+import Post from "../components/post"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
@@ -10,13 +9,14 @@ const IndexPage = props => {
     <Layout>
       <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
       {postList.edges.map(({ node }, i) => (
-        <Link to={node.fields.slug} className="link">
-          <div className="post-list">
-            <h1>{node.frontmatter.title}</h1>
-            <span>{node.frontmatter.date}</span>
-            <p>{node.excerpt}</p>
-          </div>
-        </Link>
+        <Post
+          key={i}
+          title={node.frontmatter.title}
+          slug={node.fields.slug}
+          date={node.frontmatter.date}
+        >
+          <p>{node.excerpt}</p>
+        </Post>
       ))}
     </Layout>
   )

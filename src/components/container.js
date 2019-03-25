@@ -3,10 +3,10 @@ import styled from "styled-components"
 
 const Wrapper = styled.div`
   margin: 0 auto;
-  max-width: 780px;
+  max-width: 600px;
   padding-left: 1em;
   padding-right: 1em;
-  @media (min-width: 780px) {
+  @media (min-width: 600px) {
     padding-left: 0;
     padding-right: 0;
   }
