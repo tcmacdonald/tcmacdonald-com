@@ -10,7 +10,6 @@ import PropTypes from "prop-types"
 import { StaticQuery, graphql } from "gatsby"
 import Container from "./container"
 import Header from "./header"
-import GlobalStyles from "./global-styles"
 import styled from "styled-components"
 import { FaGithubAlt, FaLinkedin, FaTwitter } from "react-icons/fa"
 import "./layout.css"
@@ -46,7 +45,6 @@ const Layout = ({ children }) => (
     `}
     render={data => (
       <>
-        <GlobalStyles />
         <Header
           siteTitle={data.site.siteMetadata.title}
           subTitle={data.site.siteMetadata.subtitle}
