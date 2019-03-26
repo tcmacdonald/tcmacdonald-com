@@ -11,7 +11,26 @@ import { StaticQuery, graphql } from "gatsby"
 import Container from "./container"
 import Header from "./header"
 import GlobalStyles from "./global-styles"
+import styled from "styled-components"
+import { FaGithubAlt, FaLinkedin, FaTwitter } from "react-icons/fa"
 import "./layout.css"
+
+const Social = styled.div`
+  display: block;
+  a {
+    color: gray;
+    &:hover {
+      color: deepskyblue;
+    }
+  }
+  svg {
+    margin: 0 1em;
+    fill: currentColor;
+  }
+`
+const Legal = styled.small`
+  color: #d4d4d4;
+`
 
 const Layout = ({ children }) => (
   <StaticQuery
@@ -36,8 +55,19 @@ const Layout = ({ children }) => (
           <Container>{children}</Container>
         </main>
         <footer>
-          <Container>
-            &copy; {new Date().getFullYear()} all rights reserved
+          <Container className="text-center">
+            <Social>
+              <a href="https://github.com/tcmacdonald">
+                <FaGithubAlt size="2em" />
+              </a>
+              <a href="https://www.linkedin.com/in/tcmacdonald">
+                <FaLinkedin size="2em" />
+              </a>
+              <a href="https://twitter.com/tcmacdonald">
+                <FaTwitter size="2em" />
+              </a>
+            </Social>
+            <Legal>&copy; {new Date().getFullYear()} all rights reserved</Legal>
           </Container>
         </footer>
       </>

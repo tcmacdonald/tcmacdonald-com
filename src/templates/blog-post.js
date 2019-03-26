@@ -1,15 +1,24 @@
 import React from "react"
-import Layout from "../components/layout"
 import { graphql } from "gatsby"
+import Layout from "../components/layout"
+import styled from "styled-components"
+
+const Meta = styled.small`
+  color: gray;
+  margin-top: 3em;
+  display: block;
+  text-align: center;
+`
 
 function BlogPost(props) {
   const post = props.data.markdownRemark
-  const { title } = post.frontmatter
+  const { title, date } = post.frontmatter
   return (
     <Layout>
       <div>
         <h1>{title}</h1>
         <div dangerouslySetInnerHTML={{ __html: post.html }} />
+        <Meta>This post was published {date}</Meta>
       </div>
     </Layout>
   )
@@ -22,7 +31,7 @@ export const query = graphql`
       html
       frontmatter {
         title
-        date
+        date(formatString: "MMMM Do YYYY")
       }
     }
   }

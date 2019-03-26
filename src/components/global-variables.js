@@ -9,9 +9,8 @@ const global = {
     dark_green: "#242E32",
   },
   screen: {
-    mobile_max: "559px",
-    mobile: "600px",
     mobile_max: "599px",
+    mobile: "600px",
     nav_max: "779px",
     nav_min: "780px",
     tablet: "900px",

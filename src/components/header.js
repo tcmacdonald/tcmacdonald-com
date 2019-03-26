@@ -2,6 +2,7 @@ import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
 import styled from "styled-components"
+import global from "./global-variables"
 import Container from "./container"
 
 const Wrapper = styled.header`
@@ -20,7 +21,11 @@ const Wrapper = styled.header`
       display: block;
       color: #fff;
       font-weight: 400;
-      font-size: 70%;
+      font-size: 50%;
+      @media screen and (min-width: ${global.screen.mobile}) {
+        font-size: 70%;
+        line-height: 100%;
+      }
     }
     &:hover {
       text-decoration: none;
@@ -31,9 +36,14 @@ const Wrapper = styled.header`
 
 const Header = ({ siteTitle, subTitle }) => (
   <Wrapper>
-    <Container style={{ paddingTop: "1em", paddingBottom: "0.5em" }}>
+    <Container
+      style={{ paddingTop: "1em", paddingBottom: "0.5em" }}
+      className="text-center"
+    >
       <Link to="/">
+        {"{ "}
         {siteTitle}
+        {" }"}
         {subTitle && <small>{subTitle}</small>}
       </Link>
     </Container>

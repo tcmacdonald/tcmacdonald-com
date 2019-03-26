@@ -3,14 +3,14 @@ import global from "./global-variables"
 
 export default createGlobalStyle`
 body {
-  background: ${global.colors.orange};
+  background: #F2F2F2;
   font-family: ${global.typography.base_font_family};
   font-size: 110%;
   line-height: 180%;
 }
 
 main {
-  background-color: white;
+  background: #FFF;
   padding: 1em 0 2em;
 }
 
@@ -35,5 +35,9 @@ blockquote {
   padding: 0 1em;
   border-left: 3px solid orange;
   font-style: italic;
+}
+
+.text-center {
+  text-align: center;
 }
 `

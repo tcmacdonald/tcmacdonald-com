@@ -1,21 +1,11 @@
 import React, { Component } from "react"
 import { Link } from "gatsby"
-import styled from "styled-components"
-
-const Wrapper = styled.div`
-  h2 {
-    margin-bottom: 0;
-  }
-  > span {
-    font-weight: bold;
-    color: orange;
-  }
-`
+import PageHeader from "./page-header"
 
 export default class Post extends Component {
   render() {
     return (
-      <Wrapper className="post-list">
+      <PageHeader className="post-list">
         <h2>
           <Link to={this.props.slug} className="link">
             {this.props.title}
@@ -23,7 +13,7 @@ export default class Post extends Component {
         </h2>
         <span>{this.props.date}</span>
         {this.props.children}
-      </Wrapper>
+      </PageHeader>
     )
   }
 }
